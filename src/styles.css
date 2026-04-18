@@ -156,5 +156,43 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-family: var(--font-sans);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    letter-spacing: -0.01em;
   }
 }
+
+@layer utilities {
+  .bg-deep { background-color: var(--deep); }
+  .bg-ocean { background-color: var(--ocean); }
+  .bg-foam { background-color: var(--foam); }
+  .text-deep { color: var(--deep); }
+  .text-ocean { color: var(--ocean); }
+  .text-gold { color: var(--gold); }
+  .border-gold { border-color: var(--gold); }
+
+  .bg-gradient-deep {
+    background-image: linear-gradient(135deg, var(--deep) 0%, var(--ocean) 100%);
+  }
+  .text-gradient-gold {
+    background: linear-gradient(135deg, var(--gold) 0%, oklch(0.88 0.12 85) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .shadow-elegant { box-shadow: 0 10px 40px -10px oklch(0.22 0.06 240 / 0.25); }
+  .shadow-deep { box-shadow: 0 20px 60px -20px oklch(0.18 0.06 240 / 0.5); }
+
+  .container-page { width: 100%; max-width: 1200px; margin-inline: auto; padding-inline: 1.25rem; }
+}
+
+@keyframes wave {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+.animate-wave { animation: wave 4s ease-in-out infinite; }
+
